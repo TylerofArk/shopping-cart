@@ -4,6 +4,7 @@
 
 // Set up an empty cart for use on this page.
 const cart = new Cart([]);
+console.log(cart);
 
 // On screen load, we call this method to put all of the product options
 // (the things in the Product.allProducts array) into the drop down list.
@@ -35,8 +36,14 @@ function handleSubmit(event) {
 
 }
 
+
+
 // TODO: Add the selected item and quantity to the cart
 function addSelectedItemToCart() {
+  let quantity = document.getElementById('quantity')
+  let items = document.getElementById('items');
+  cart.addItem(items, quantity);      
+  
   // TODO: suss out the item picked from the select list
   // TODO: get the quantity
   // TODO: using those, add one item to the Cart
